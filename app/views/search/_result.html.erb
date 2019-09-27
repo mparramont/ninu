@@ -1,0 +1,13 @@
+<div class="media" style='background-color: white'>
+  <img class="mr-3"
+       src='<%= result[:img] %>'
+       alt="Generic placeholder image"
+       style='width: 150px'>
+  <div class="media-body">
+    <h5 class="mt-0"><%= result[:place] %></h5>
+    <% result[:options].each do |option| %>
+      <%= render partial: 'option', locals: { option: option } %>
+    <% end %>
+  </div>
+</div>
+<br>

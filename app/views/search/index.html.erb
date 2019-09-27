@@ -1,0 +1,5 @@
+<div class='container-fluid' style='background-color: rgb(247, 247, 249)'>
+  <% @results.each do |result| %>
+    <%= render partial: 'result', locals: { result: result } %>
+  <% end %>
+</div>

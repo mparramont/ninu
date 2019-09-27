@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'mutations'
 gem 'vcr'
+gem 'htmlbeautifier'
+gem 'binding_of_caller'
 gem 'awesome_print'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.0.0'

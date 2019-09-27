@@ -58,15 +58,15 @@
               </div>
               <div class="form-group">
                 <%= label_tag :budget, "Budget" %>
-                <%= text_field_tag :budget, nil, class: 'form-control' %>
+                <%= number_field_tag :budget, 200, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= label_tag :start_date, "Start date" %>
-                <%= date_field_tag :start_date, nil, class: 'form-control' %>
+                <%= date_field_tag :start_date, Date.today.next_occurring(:friday), class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= label_tag :end_date, "End date" %>
-                <%= date_field_tag :end_date, nil, class: 'form-control' %>
+                <%= date_field_tag :end_date, Date.today.next_occurring(:sunday), class: 'form-control' %>
               </div>
               <%= submit_tag "Search", class: 'btn btn-primary btn-xl' %>
             <% end %>

@@ -4,11 +4,11 @@ class Search < Mutations::Command
   optional do
     float :latitude
     float :longitude
-    string :location
     integer :budget
-    string :type
     date :start_date
     date :end_date
+    # string :type
+    # string :location
   end
 
   def execute
@@ -25,10 +25,12 @@ class Search < Mutations::Command
   end
 
   def fetch_locations
+    # TODO use Location AP
     %w[reus tarragona girona cervera cadaqués]
   end
 
   def search_to_location(location)
+    # todo use Search API
     {
       'result' => location
     }

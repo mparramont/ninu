@@ -16,6 +16,7 @@ class Search < Mutations::Command
       {
         place: 'Girona',
         img: 'https://user-images.githubusercontent.com/1333174/65799970-a6f4e000-e175-11e9-8b3a-7c286049aadb.png',
+        type: 'Chill',
         options: [
           { type: 'bus', price: 480, co2: 10 },
           { type: 'train', price: 480, co2: 10 },
@@ -25,6 +26,7 @@ class Search < Mutations::Command
       {
         place: 'Zaragoza',
         img: 'https://user-images.githubusercontent.com/1333174/65800115-f4714d00-e175-11e9-99ae-a70d161fb990.png',
+        type: 'Chill',
         options: [
           { type: 'bus', price: 480, co2: 10 },
           { type: 'train', price: 480, co2: 10 },
@@ -34,6 +36,7 @@ class Search < Mutations::Command
       {
         place: 'Carcassone',
         img: 'https://user-images.githubusercontent.com/1333174/65800304-66e22d00-e176-11e9-98ae-2941f405e23c.png',
+        type: 'Chill',
         options: [
           { type: 'bus', price: 480, co2: 10 },
           { type: 'train', price: 480, co2: 10 } ,
@@ -43,6 +46,7 @@ class Search < Mutations::Command
       {
         place: 'Mallorca',
         img: 'https://user-images.githubusercontent.com/1333174/65800428-c5a7a680-e176-11e9-8beb-abcb3925ab90.png',
+        type: 'Chill',
         options: [
           { type: 'ship', price: 480, co2: 10 },
           { type: 'plane', price: 480, co2: 10 }

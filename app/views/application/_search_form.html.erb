@@ -1,0 +1,63 @@
+<% margin = local_assigns[:margin] || 3 %>
+<div class="col-lg-8 align-self-baseline">
+  <%= form_tag "/search", method: "get" do %>
+    <div class="input-group mb-<%= margin %>">
+      <div class="input-group-prepend input-group-prepend-ninu">
+        <div class="input-group-text">👫</div>
+        <%= select_tag :number_of_people,
+                     options_for_select(
+                       [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]
+                     ),
+                     class: 'form-control' %>
+      </div>
+    </div>
+    <div class="input-group mb-<%= margin %>">
+      <div class="input-group-prepend input-group-prepend-ninu w-100">
+        <div class="input-group-text" style='width: 100px'>From</div>
+        <%= text_field_tag :location, 'Barcelona', placeholder: 'From', class: 'form-control' %>
+      </div>
+    </div>
+    <div class="input-group mb-<%= margin %>">
+      <div class="input-group-prepend input-group-prepend-ninu w-100">
+        <div class="input-group-text" style='width: 100px'>Budget</div>
+        <%= select_tag :budget,
+                     options_for_select(
+                       [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900], 1000]
+                     ),
+                     class: 'form-control',
+                     style: 'padding-left: 5px;' %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="input-group mb-<%= margin %> col-6" style='padding-right: 5px;'>
+        <%= date_field_tag :start_date,
+                         Date.today.next_occurring(:friday),
+                         class: 'form-control' %>
+      </div>
+      <div class="input-group mb-<%= margin %> col-6" style='padding-left: 5px;'>
+        <%= date_field_tag :end_date,
+                         Date.today.next_occurring(:sunday),
+                         class: 'form-control' %>
+      </div>
+    </div>
+    <div class="input-group mb-<%= margin %>">
+      <div class="input-group-prepend input-group-prepend-ninu w-100">
+        <div class="input-group-text" style='width: 100px'>Type of trip</div>
+        <%= select_tag :type,
+                     options_for_select(
+                       [
+                         ['Chill', 'chill'],
+                         ['Historical', 'historical'],
+                         ['Adventure', 'adventure'],
+                         ['Romantic', 'romantic'],
+                         ['Foodie', 'foodie'],
+                         ['Party', 'party'],
+                       ]
+                     ),
+                     class: 'form-control',
+                     style: 'padding-left: 5px;' %>
+      </div>
+    </div>
+    <%= submit_tag "Explore >", class: "btn btn-primary #{"btn-lg" if margin == 3} w-100" %>
+  <% end %>
+</div>

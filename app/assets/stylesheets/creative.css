@@ -10352,8 +10352,8 @@ hr.light {
 }
 
 #mainNav {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #fff;
+  border-bottom: 1px solid #ced4da;
   transition: background-color 0.2s ease;
 }
 
@@ -10509,4 +10509,13 @@ header.masthead h1 {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.result {
+  background-size: cover;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 170px;
+  margin-bottom: 10px;
+  width: 100%;
 }

@@ -1,13 +1,36 @@
-<div class="media" style='background-color: white'>
-  <img class="mr-3"
-       src='<%= result[:img] %>'
-       alt="Generic placeholder image"
-       style='width: 150px'>
-  <div class="media-body">
-    <h5 class="mt-0"><%= result[:place] %></h5>
-    <% result[:options].each do |option| %>
-      <%= render partial: 'option', locals: { option: option } %>
-    <% end %>
+<div class='result'
+     style='background-image: url("<%= result[:img] %>")'>
+  <div class='text-white' style='font-size: 18px'>
+    <div class='container'>
+      <div class='row' style='padding-top: 5px;'>
+        <div class='col-6' style='padding-left: 10px;'>
+          <div class='badge' style='background-color: #4BA97A'>
+            <%= result[:type].downcase %>
+          </div>
+        </div>
+        <div class='col-6' style='padding-right: 10px; text-align: right;'>
+          <%= result[:options].map{|option| option[:co2]}.min %> kg CO₂
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class='text-white' style='font-size: 23px; padding-top: 10px;'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-6' style='padding-left: 10px;'>
+          <%= result[:place] %>
+        </div>
+        <div class='col-6' style='padding-right: 10px; text-align: right;'>
+          from <%= (result[:options].sum{|option| option[:price]} / result[:options].count).round(0) %>€
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<br>
+<!-- <% result[:options].each do |option| %>
+      <%= render partial: 'option', locals: { option: option } %>
+    <% end %> -->

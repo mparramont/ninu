@@ -15,6 +15,7 @@ gem 'vcr'
 gem 'htmlbeautifier'
 gem 'binding_of_caller'
 gem 'awesome_print'
+gem "font-awesome-rails"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.0.0'
 gem 'high_voltage'

@@ -1,4 +1,8 @@
 <div class='result'
+     data-toggle="collapse"
+     data-target="#collapse-<%= result[:place] %>"
+     aria-expanded="false"
+     aria-controls="collapseExample"
      style='background-image: url("<%= result[:img] %>")'>
   <div class='text-white' style='font-size: 18px'>
     <div class='container'>
@@ -7,9 +11,6 @@
           <div class='badge' style='background-color: #4BA97A'>
             <%= result[:type].downcase %>
           </div>
-        </div>
-        <div class='col-6' style='padding-right: 10px; text-align: right;'>
-          <%= result[:options].map{|option| option[:co2]}.min %> kg CO₂
         </div>
       </div>
     </div>
@@ -31,6 +32,9 @@
     </div>
   </div>
 </div>
-<!-- <% result[:options].each do |option| %>
-      <%= render partial: 'option', locals: { option: option } %>
-    <% end %> -->
+<div class="collapse" id="collapse-<%= result[:place] %>" style='margin-bottom: 10px;'>
+  <% co2s = result[:options].map{|option| option[:co2]} %>
+  <% result[:options].each do |option| %>
+    <%= render partial: 'option', locals: { option: option, co2s: co2s } %>
+  <% end %>
+</div>

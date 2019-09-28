@@ -18,9 +18,9 @@ class Search < Mutations::Command
         img: 'https://user-images.githubusercontent.com/1333174/65799970-a6f4e000-e175-11e9-8b3a-7c286049aadb.png',
         type: 'Chill',
         options: [
-          { type: 'bus', price: 480, co2: 10 },
+          { type: 'bus', price: 480, co2: 20 },
           { type: 'train', price: 480, co2: 10 },
-          { type: 'plane', price: 480, co2: 10 }
+          { type: 'plane', price: 480, co2: 30 }
         ]
       },
       {

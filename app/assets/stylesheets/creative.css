@@ -10515,6 +10515,7 @@ header.masthead h1 {
   background-size: cover;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  cursor: pointer;
   height: 170px;
   margin-bottom: 10px;
   width: 100%;

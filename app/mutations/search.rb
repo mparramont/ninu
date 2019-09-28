@@ -17,6 +17,7 @@ class Search < Mutations::Command
     results["locations"].map do |l|
       {
         place: l["name"],
+        type: 'chill',
         img: 'https://user-images.githubusercontent.com/1333174/65799970-a6f4e000-e175-11e9-8b3a-7c286049aadb.png',
         options: [
           { type: 'bus', price: price, co2: 10 },

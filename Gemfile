@@ -20,6 +20,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pg'
+gem 'httparty'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -44,4 +45,5 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end

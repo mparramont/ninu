@@ -13,12 +13,11 @@ class Search < Mutations::Command
 
   def execute
     results = HTTParty.get("https://kiwicom-prod.apigee.net/locations/radius?apikey=#{ENV["KIWI_API_KEY"]}&term=BCN&radius=250&locale=en-US&location_types=airport&limit=20&active_only=true")
-
-    results["locations"].map do |l|
+    results["locations"].drop(1).map do |l|
       {
         place: l["name"],
         type: 'chill',
-        img: 'https://user-images.githubusercontent.com/1333174/65799970-a6f4e000-e175-11e9-8b3a-7c286049aadb.png',
+        img: img_url(l["name"]),
         options: [
           { type: 'bus', price: price, co2: 10 },
           { type: 'train', price: price, co2: 10 },
@@ -39,10 +38,35 @@ class Search < Mutations::Command
     #     place: 'Mallorca',
     #     img: 'https://user-images.githubusercontent.com/1333174/65800428-c5a7a680-e176-11e9-8beb-abcb3925ab90.png',
 
+
     # search_results
   end
 
   private
+
+  def img_url(location)
+    case location
+    when "Girona–Costa Brava"
+      'https://user-images.githubusercontent.com/1333174/65799970-a6f4e000-e175-11e9-8b3a-7c286049aadb.png'
+    when "Palma de Mallorca"
+      'https://user-images.githubusercontent.com/1333174/65800428-c5a7a680-e176-11e9-8beb-abcb3925ab90.png'
+    when "Carcassonne"
+      'https://user-images.githubusercontent.com/1333174/65800304-66e22d00-e176-11e9-98ae-2941f405e23c.png'
+    else
+      ['https://user-images.githubusercontent.com/1333174/65799970-a6f4e000-e175-11e9-8b3a-7c286049aadb.png',
+      'https://user-images.githubusercontent.com/1333174/65800115-f4714d00-e175-11e9-99ae-a70d161fb990.png',
+      'https://user-images.githubusercontent.com/1333174/65800304-66e22d00-e176-11e9-98ae-2941f405e23c.png',
+      'https://user-images.githubusercontent.com/1333174/65800428-c5a7a680-e176-11e9-8beb-abcb3925ab90.png'].sample
+    end
+
+    # "Lleida–Alguaire"
+    # "Perpignan–Rivesaltes"
+    # "Castellón–Costa Azahar"
+    # "Menorca"
+    # "Béziers Cap d Agde"
+    # "Reus"
+
+  end
 
   def price
     budget - rand(5) * 10

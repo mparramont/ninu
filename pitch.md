@@ -1,3 +1,25 @@
+claim
+url and QR again in thanks
+Optimizes for travel options
+that produce less CO2: train, bus, ship =>
+
+
+
+* Remove index
+* The problem: mass tourism
+* The Challenge (no s)
+* third solution slide with more results and expanded options for one
+* Alternatives -> Why:
+* Stack, challenge:
+  * ":" -> "->"
+  * "while we get access…" -> "for now"
+* Roadmap
+  * put numbers in Roadmap
+  * Put scrapping in the end
+  * "…" at the end of Portugal
+* Team: put it before roadmap
+
+
 # Pitch
 * What problem are you solving and why is it important?
   * People have some free time and some money, but don't know where to go. They might be tired of the usual destinations, they might've visited them already, or they might be too far away/expensive for their budget if they're not planning far-ahead.

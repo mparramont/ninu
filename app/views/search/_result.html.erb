@@ -3,12 +3,12 @@
      data-target="#collapse-<%= result[:place] %>"
      aria-expanded="false"
      aria-controls="collapseExample"
-     style='background-image: url("<%= result[:img] %>")'>
+     style='background-image: url("<%= result[:img] %>"), linear-gradient(rgba(2, 0, 3, 0.82) 0%, rgba(57, 21, 80, 0));'>
   <div class='text-white' style='font-size: 18px'>
     <div class='container'>
       <div class='row' style='padding-top: 5px;'>
         <div class='col-6' style='padding-left: 10px;'>
-          <div class='badge' style='background-color: #4BA97A'>
+          <div class='badge' style='background-color: <%= SearchController::TYPE_COLOR[result[:type]] %>'>
             <%= result[:type].downcase %>
           </div>
         </div>
